@@ -1,1 +1,1 @@
-web: gunicorn HealthMateAI_Project.wsgi
+web: gunicorn HEALTHMATEAI_PROJECT.wsgi
