@@ -1,0 +1,8 @@
+<h2>Your Health Metrics</h2>
+<ul>
+  {% for m in metrics %}
+    <li>{{ m.metric_type }} - {{ m.value }} on {{ m.date }}</li>
+  {% empty %}
+    <li>No data yet!</li>
+  {% endfor %}
+</ul>
