@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: healthmate-ai
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn HealthMateAI_Project.wsgi
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: HealthMateAI_Project.settings
+      - key: PYTHON_VERSION
+        value: 3.11
