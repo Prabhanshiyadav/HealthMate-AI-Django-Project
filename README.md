@@ -1,3 +1,3 @@
 # HealthMate-AI-Django-Project
 Github repo : 
-Live 
+Live Demo : 
