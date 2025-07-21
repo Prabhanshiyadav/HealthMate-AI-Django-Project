@@ -21,7 +21,7 @@ SereniCare is a sleek and professional Django-based health management system tha
 ## 📸 Output Screenshots
 
 ### 🏠 Home Page
-![Home Page](static\outputs\img1.png)
+![Home Page](static/outputs/img1.png)
 
 ### 🔐 Login Page
 ![Login Page](static/outputs/login.png)
