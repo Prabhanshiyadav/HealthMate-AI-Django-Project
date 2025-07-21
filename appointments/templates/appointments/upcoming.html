@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Upcoming Appointments - SereniCare{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto p-8 bg-white rounded-xl shadow-md animate-fade-in">
+    <h2 class="text-3xl font-bold text-center text-blue-700 mb-6">Your Upcoming Appointments</h2>
+    
+    {% if appointments %}
+        <ul class="space-y-4">
+            {% for appointment in appointments %}
+                <li class="border-l-4 border-blue-500 pl-4 py-2 shadow-sm hover:shadow-md transition">
+                    <p><strong>Doctor:</strong> {{ appointment.doctor }}</p>
+                    <p><strong>Date:</strong> {{ appointment.date }}</p>
+                    <p><strong>Time:</strong> {{ appointment.time }}</p>
+                    <p><strong>Status:</strong> <span class="text-green-600 font-semibold">{{ appointment.status }}</span></p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="text-center text-gray-600">No upcoming appointments found.</p>
+    {% endif %}
+</div>
+{% endblock %}

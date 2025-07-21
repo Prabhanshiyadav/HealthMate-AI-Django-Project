@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}My Prescriptions | SereniCare{% endblock %}
+{% block content %}
+<h2 class="text-3xl font-semibold text-teal-700 mb-6">Your Prescriptions</h2>
+<ul id="prescriptionList" class="space-y-4"></ul>
+
+<script>
+fetch("/api/prescriptions/")
+  .then(res => res.json())
+  .then(data => {
+    const list = document.getElementById("prescriptionList");
+    data.forEach(prescription => {
+      const item = document.createElement("li");
+      item.className = "bg-white p-4 shadow rounded-xl";
+      item.innerHTML = `
+        <h3 class="font-bold text-lg">Doctor: ${prescription.doctor_name}</h3>
+        <p><strong>Diagnosis:</strong> ${prescription.diagnosis}</p>
+        <p><strong>Medications:</strong> ${prescription.medications}</p>
+      `;
+      list.appendChild(item);
+    });
+  });
+</script>
+{% endblock %}

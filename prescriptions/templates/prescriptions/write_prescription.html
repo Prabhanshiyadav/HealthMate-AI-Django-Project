@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Write Prescription - SereniCare{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md mt-10 animate-fade-in">
+    <h2 class="text-3xl font-bold text-blue-700 text-center mb-6">Write a Prescription</h2>
+    
+    <form method="post" class="space-y-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+            Save Prescription
+        </button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Welcome to SereniCare{% endblock %}
+
+{% block content %}
+<section class="text-center py-16 px-6 bg-gradient-to-r from-blue-50 via-white to-blue-100 rounded-xl shadow animate-fade-in">
+    <h1 class="text-5xl font-bold text-blue-700 mb-4 animate-pulse">Welcome to SereniCare</h1>
+    <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+        Your trusted partner in health and healing. Book appointments, manage your prescriptions, and consult with top professionals — all in one place.
+    </p>
+
+    <div class="flex justify-center space-x-4">
+        <a href="{% url 'book_appointment' %}" class="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition">
+            Book Appointment
+        </a>
+        <a href="{% url 'prescriptions:view_prescriptions' %}" class="px-6 py-3 bg-green-500 text-white rounded-xl shadow hover:bg-green-600 transition">
+            View Prescriptions
+        </a>
+    </div>
+</section>
+{% endblock %}
