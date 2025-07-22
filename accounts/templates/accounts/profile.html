@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}Profile - SereniCare{% endblock %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-white px-4 py-10">
+  <div class="bg-white/50 backdrop-blur-md border border-blue-200 shadow-2xl rounded-3xl p-8 max-w-2xl w-full animate-profile-entry">
+
+    <h2 class="text-3xl font-extrabold text-center text-blue-800 mb-6">Welcome, {{ user.username }}</h2>
+
+    <!-- Profile Image -->
+    <div class="flex justify-center mb-6">
+      <img
+        src="{{ user.profile.profile_picture.url }}"
+        onerror="this.onerror=null;this.src='https://via.placeholder.com/150?text=User';"
+        class="w-32 h-32 rounded-full border-4 border-blue-300 shadow-lg transition hover:scale-105"
+        alt="Profile Picture"
+      >
+    </div>
+
+    <!-- User Info -->
+    <div class="space-y-3 text-center text-gray-800 text-lg font-medium">
+      <p><span class="text-gray-600">📧 Email:</span> {{ user.email }}</p>
+      <p><span class="text-gray-600">🙍‍♀️ Full Name:</span> {{ user.get_full_name|default:'Not provided' }}</p>
+      <p><span class="text-gray-600">📅 Joined:</span> {{ user.date_joined|date:"F d, Y" }}</p>
+      <p><span class="text-gray-600">⏱️ Last Login:</span> {{ user.last_login|date:"F d, Y, h:i A" }}</p>
+      <p><span class="text-gray-600">🔐 User Type:</span> 
+        {% if user.is_staff %}Admin{% else %}Regular User{% endif %}
+      </p>
+    </div>
+
+    <!-- Actions -->
+    <div class="text-center mt-6 space-x-4">
+      <a href="{% url 'logout' %}" class="px-4 py-2 bg-red-500 text-white rounded-lg shadow hover:bg-red-600 transition duration-300">
+        Logout
+      </a>
+      <a href="{% url 'book_appointment' %}" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 transition duration-300">
+        Book Appointment
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Animations -->
+<style>
+  @keyframes profileFade {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-profile-entry {
+    animation: profileFade 0.8s ease-out forwards;
+  }
+</style>
+{% endblock %}
