@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Prescriptions - SereniCare{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto bg-white p-8 rounded-xl shadow-md mt-10 animate-fade-in">
+    <h2 class="text-3xl font-bold text-blue-700 text-center mb-6">Your Prescriptions</h2>
+
+    {% if prescriptions %}
+        <div class="space-y-6">
+            {% for prescription in prescriptions %}
+                <div class="border-l-4 border-green-500 p-4 bg-gray-50 shadow hover:shadow-md transition">
+                    <p><strong>Date:</strong> {{ prescription.date }}</p>
+                    <p><strong>Doctor:</strong> {{ prescription.doctor }}</p>
+                    <p><strong>Diagnosis:</strong> {{ prescription.diagnosis }}</p>
+                    <p><strong>Medications:</strong> {{ prescription.medications }}</p>
+                    <p><strong>Advice:</strong> {{ prescription.advice }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-center text-gray-600">No prescriptions available.</p>
+    {% endif %}
+</div>
+{% endblock %}

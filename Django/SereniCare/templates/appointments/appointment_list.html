@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}All Appointments - SereniCare{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto p-8 bg-white rounded-xl shadow-md animate-fade-in">
+    <h2 class="text-3xl font-bold text-center text-blue-700 mb-6">All Appointments</h2>
+    
+    {% if appointments %}
+        <table class="min-w-full border">
+            <thead class="bg-blue-100">
+                <tr>
+                    <th class="px-4 py-2 text-left">Patient</th>
+                    <th class="px-4 py-2 text-left">Doctor</th>
+                    <th class="px-4 py-2 text-left">Date</th>
+                    <th class="px-4 py-2 text-left">Time</th>
+                    <th class="px-4 py-2 text-left">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for appointment in appointments %}
+                    <tr class="border-t hover:bg-gray-100 transition">
+                        <td class="px-4 py-2">{{ appointment.doctor }}</td>
+                        <td class="px-4 py-2">{{ appointment.patient.username }}</td>
+                        <td class="px-4 py-2">{{ appointment.date }}</td>
+                        <td class="px-4 py-2">{{ appointment.time }}</td>
+                        <td class="px-4 py-2">{{ appointment.status }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="text-center text-gray-600">No appointments found.</p>
+    {% endif %}
+</div>
+{% endblock %}

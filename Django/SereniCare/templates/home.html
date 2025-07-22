@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Welcome to SereniCare{% endblock %}
+
+{% block content %}
+<section class="text-center py-16 animate-slideIn">
+  <h1 class="text-5xl font-bold text-brand mb-4">Welcome to SereniCare</h1>
+  <p class="text-lg text-gray-700 mb-6">Your digital gateway to wellness and professional care.</p>
+  <a href="{% url 'register' %}" class="px-6 py-3 bg-brand text-white font-semibold rounded-full shadow-lg hover:bg-blue-600 transition duration-300">
+    Get Started
+  </a>
+</section>
+
+<section class="py-16 bg-white bg-opacity-60 backdrop-blur-md rounded-xl shadow-lg mx-auto max-w-5xl mt-8 animate-fadeIn">
+  <h2 class="text-3xl font-semibold text-brand mb-6">Why SereniCare?</h2>
+  <div class="grid md:grid-cols-3 gap-6 text-left text-gray-800 px-6">
+    <div>
+      <h3 class="font-semibold text-lg mb-2">🩺 Book Appointments</h3>
+      <p>Find and schedule with trusted doctors from anywhere.</p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-lg mb-2">📄 View Prescriptions</h3>
+      <p>Access your prescription history anytime securely.</p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-lg mb-2">👩‍⚕️ Patient Records</h3>
+      <p>Stay organized with a clean, calming interface.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

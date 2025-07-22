@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Profile - SereniCare{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto mt-10 p-8 bg-white rounded-xl shadow-md space-y-6 animate-fade-in">
+    <h2 class="text-3xl font-bold text-blue-700 text-center">Welcome, {{ user.username }}</h2>
+    
+    <div class="flex justify-center">
+        <img src="{{ user.profile.profile_picture.url }}" class="w-32 h-32 rounded-full shadow-md border-4 border-blue-200" alt="Profile Picture">
+    </div>
+
+    <div class="text-center space-y-2">
+        <p><span class="font-semibold">Email:</span> {{ user.email }}</p>
+        <p><span class="font-semibold">Full Name:</span> {{ user.get_full_name }}</p>
+    </div>
+
+    <div class="text-center">
+        <a href="{% url 'logout' %}" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">Logout</a>
+    </div>
+</div>
+{% endblock %}

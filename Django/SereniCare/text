@@ -1,0 +1,14 @@
+http://127.0.0.1:8000/api/users/
+
+http://127.0.0.1:8000/api/appointments/
+
+http://127.0.0.1:8000/api/prescriptions/
+
+
+Visit:
+
+/accounts/register/
+
+/accounts/login/
+
+/accounts/profile/
