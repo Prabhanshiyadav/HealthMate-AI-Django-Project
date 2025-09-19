@@ -1,7 +1,6 @@
 # 🌿 SereniCare – Your Wellness, Digitally Managed
 SereniCare is a sleek and professional Django-based health management system that helps patients and healthcare providers manage **appointments, prescriptions, and records** — all in one place.
 ---
-
 ## 🚀 Key Features
 - 🩺 **Book Appointments** – Schedule consultations with verified doctors.
 - 📋 **Prescription View** – Access past prescriptions securely.
